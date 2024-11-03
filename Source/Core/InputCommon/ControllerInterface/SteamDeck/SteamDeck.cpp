@@ -295,7 +295,7 @@ void Device::UpdateInput()
     // 0x03 = payload length
     // 0x30 = SETTING_GYRO_MODE
     // 0x18 0x00 = SETTING_GYRO_MODE_SEND_RAW_ACCEL | SETTING_GYRO_MODE_SEND_RAW_GYRO
-    const unsigned char pkt[] = {0x00, 0x87, 0x03, 0x30, 0x18, 0x00};
+    const unsigned char pkt[65] = {0x00, 0x87, 0x03, 0x30, 0x18, 0x00};
     hid_send_feature_report(m_device, pkt, sizeof(pkt));
   }
 
